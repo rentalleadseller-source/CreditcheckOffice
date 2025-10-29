@@ -238,7 +238,7 @@ function setEligibilityLine(city, region, country){
     geoEl.classList.add('congrats');
 }
 
-// Fetch user location and show eligibility after 1.3 seconds
+// Fetch user location and show eligibility after 1 seconds
 fetch('https://ipapi.co/json/').then(r => r.json()).then(d => {
     if(!d.error){
         setTimeout(() => { setEligibilityLine(d.city, d.region, d.country_name); }, 3000);
