@@ -1,290 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Credit & Background Check — Fast & Secure</title>
-<style>
-:root {
-  --primary: #059669;
-  --primary-hover: #047857;
-  --text-dark: #111827;
-  --text-muted: #4b5563;
-  --bg-light: #f9fafb;
-  --card-bg: #ffffff;
-  --radius: 14px;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: var(--bg-light);
-  margin: 0;
-  padding: 0;
-  color: var(--text-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.container {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-width: 720px;
-  width: 92%;
-  padding: 32px 28px 38px;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 10px;
-}
-
-h1 .line1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary);
-}
-
-h1 .line2 {
-  font-size: 1rem;
-  font-weight: normal;
-  color: var(--primary);
-  margin-top: 4px;
-}
-
-.lead {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 20px;
-  transition: all 0.5s ease;
-}
-
-.meter {
-  font-size: 1.05rem;
-  color: var(--text-dark);
-  background: #f3f4f6;
-  padding: 10px 14px;
-  border-radius: 8px;
-  margin-bottom: 22px;
-  display: inline-block;
-}
-
-ul {
-  text-align: left;
-  display: inline-block;
-  margin: 18px 0 24px;
-  padding-left: 0;
-  list-style: none;
-}
-
-li {
-  background: #f9fafb;
-  border-left: 4px solid var(--primary);
-  padding: 9px 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  color: var(--text-dark);
-}
-
-li.dont-back {
-  background: #ecfdf5;
-  border-left: 4px solid var(--primary);
-  color: #065f46;
-  font-weight: 600;
-  text-align: center;
-  font-size: 1rem;
-  padding: 12px 14px;
-  box-shadow: 0 2px 8px rgba(5,150,105,0.1);
-  transition: all 0.25s ease;
-}
-
-li.dont-back:hover {
-  transform: scale(1.02);
-  box-shadow: 0 3px 10px rgba(5,150,105,0.15);
-}
-
-.back-highlight {
-  color: #dc2626;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.cta {
-  display: inline-block;
-  text-align: center;
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  padding: 14px 22px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.05rem;
-  transition: all 0.2s ease;
-}
-
-.cta:hover {
-  background: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(5,150,105,0.2);
-}
-
-.trust {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  margin-top: 20px;
-}
-
-/* Spinner */
-#spinner {
-  display: inline-block;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg);}
-  100% { transform: rotate(360deg);}
-}
-
-/* Congrats animation with new color */
-.lead.congrats {
-  color: #1d4ed8;
-  font-weight: bold;
-  font-size: 1.2rem;
-  animation: popIn 0.5s ease-out;
-}
-@keyframes popIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  60% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); }
-}
-
-/* Vertical reviews */
-.reviews {
-  margin-top: 36px;
-  text-align: center;
-}
-.reviews h2 {
-  color: var(--primary);
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-}
-#review-box {
-  background: #f3f4f6;
-  color: var(--text-dark);
-  border-radius: 12px;
-  padding: 18px 20px;
-  max-width: 620px;
-  margin: 0 auto;
-  min-height: 140px;
-  transition: all 0.6s ease;
-}
-#review-box.fade {
-  opacity: 0;
-  transform: translateY(10px);
-}
-.stars {
-  color: #fbbf24;
-  margin-bottom: 6px;
-  font-size: 1.05rem;
-}
-#review-box p { font-size: 0.96rem; line-height: 1.5; margin-bottom: 6px; }
-#review-box .name { font-weight: 600; color: #4b5563; font-size: 0.9rem; }
-</style>
-</head>
-<body>
-<div class="container">
-<h1>
-  <div class="line1">Credit & Background</div>
-  <div class="line2">Check Insights</div>
-</h1>
-
-<p id="geo" class="lead">Checking Your Eligibility... <span id="spinner">⏳</span></p>
-<div class="meter">🟢 Quickly check your credit score & public records</div>
-
-<ul>
-<li>📑 Access your credit and background details securely</li>
-<li>🔒 Privacy-first, encrypted connection</li>
-<li>⚡ Instant results, no waiting</li>
-<li class="dont-back">🕵 Don't press <span class="back-highlight">BACK</span> until you see your report</li>
-</ul>
-
-<a href="https://afflat3a2.com/trk/lnk/704E6BC1-B11C-4777-B921-E5B8701A00D5/?o=19113&c=918277&a=735988&k=91D04BD546118A3889D4A4517EF2E0CE&l=20195&s1=SKY-N-SAS-Office" 
-class="cta" target="_blank" rel="noopener sponsored">
-➡️ Check Your Credit & Background Report
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TransUnion Credit Score Snapshot
+    </title>
+    <style>
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      color: #444;
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+    .content {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .benefits {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .benefits li {
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .benefits li::before {
+      content: &#34;✔️&#34;;
+      position: absolute;
+      left: 0;
+      color: #27ae60;
+    }
+    .cta-button {
+      display: block;
+      background-color: #1a73e8;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .cta-button:hover {
+      background-color: #1665c1;
+    }
+    #timer {
+      font-size: 14px;
+      color: #555;
+    }
+    .geo {
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Your TransUnion Credit Score Snapshot
+      </h1>
+      <h2>
+        You&#39;re eligible from
+        <span class="geo">        Loading location...
+</span>
+      </h2>
+      <div class="content">
+        Your credit score matters for everything from credit card approvals to home loans. 
+      Get your TransUnion credit score instantly with this snapshot service. Checking your own score will
+        <strong>        not
+</strong>
+        hurt your credit.
+      </div>
+      <ul class="benefits">
+        <li>
+          Instant access to your TransUnion credit score
+        </li>
+        <li>
+          See where your credit stands in minutes
+        </li>
+        <li>
+          Does not affect your credit in any way
+        </li>
+        <li>
+          Secure and confidential service
+        </li>
+      </ul>
+      <a href="https://www.transunion.com/credit-scores-reports/credit-premium-unturned?plan_code=phx_credit_premium_3b_qtr_2995&irclickid=QaXzbzTSkxycWm0RvuVO6xO8UkpUB6RBgxwrwQ0&cha=affiliate&type=paid&medium=direct&src=ir&subSrc=10813&campaignId=735988&utm_source=ir&utm_medium=affiliate&utm_campaign=10813&utm_id=735988" class="cta-button" target="_blank">      👉 Check Your 3 Premium Score Report
 </a>
-
-<div class="trust">🔒 SSL Secured • 🌐 Independent • 🚀 Transparency First</div>
-
-<!-- Vertical reviews section -->
-<div class="reviews">
-<h2>Recent User Feedback 😊</h2>
-<div id="review-box" class="review active">
-<div class="stars">⭐⭐⭐⭐⭐ (5.0)</div>
-<p>Loading latest reviews...</p>
-<div class="name">— Verified User</div>
-</div>
-</div>
-</div>
-
-<script>
-// Function to set eligibility line with location at the end in green
-function setEligibilityLine(city, region, country){
-    let location = [city, region].filter(Boolean).join(', ') || country || '';
-    const geoEl = document.getElementById('geo');
-    geoEl.innerHTML = `🎉 Congratulations! You are eligible for your check from <span style="color:#059669;"><strong>${location}</strong></span>`;
-    geoEl.classList.add('congrats');
-}
-
-// Fetch user location and show eligibility after 1 seconds
-fetch('https://ipapi.co/json/').then(r => r.json()).then(d => {
-    if(!d.error){
-        setTimeout(() => { setEligibilityLine(d.city, d.region, d.country_name); }, 3000);
-    } else throw new Error();
-}).catch(() => {
-    fetch('https://ipwho.is/').then(r => r.json()).then(d => {
-        if(d && d.success !== false){
-            setTimeout(() => { setEligibilityLine(d.city, d.region, d.country); }, 3000);
-        } else {
-            document.getElementById('geo').style.display='none';
-        }
-    }).catch(()=>{ document.getElementById('geo').style.display='none'; });
-});
-
-// Vertical auto-sliding reviews
-const reviewsData = [
-  {stars:"⭐⭐⭐⭐⭐ (5.0)", text:"Very easy to understand my credit and background info 😄", name:"— Emma W., NY"},
-  {stars:"⭐⭐⭐⭐⭐ (4.9)", text:"Fast and accurate reports 👍", name:"— Michael T., CA"},
-  {stars:"⭐⭐⭐⭐⭐ (4.8)", text:"Instant results, very reliable 😃", name:"— Sarah P., TX"},
-  {stars:"⭐⭐⭐⭐⭐ (5.0)", text:"Helped me spot errors in my credit and background 🔒", name:"— Kevin D., FL"},
-  {stars:"⭐⭐⭐⭐⭐ (4.9)", text:"Clear layout and quick info 😍", name:"— Priya S., NY"},
-  {stars:"⭐⭐⭐⭐⭐ (4.8)", text:"Trusted and secure platform ⏱️", name:"— Daniel R., IL"},
-  {stars:"⭐⭐⭐⭐⭐ (4.9)", text:"Highly recommend for checking credit and background 😄", name:"— Lisa M., OH"},
-  {stars:"⭐⭐⭐⭐⭐ (5.0)", text:"Simple, fast, and very accurate 👍", name:"— John K., WA"},
-  {stars:"⭐⭐⭐⭐⭐ (4.7)", text:"Easy to use and understand my info 😊", name:"— Rachel H., CO"},
-  {stars:"⭐⭐⭐⭐⭐ (4.9)", text:"Excellent service, very informative 🔒", name:"— Alex C., MA"}
-];
-
-const box = document.getElementById('review-box');
-let idx = 0;
-reviewsData.sort(() => Math.random() - 0.5);
-
-function showNextReview() {
-  const review = reviewsData[idx];
-  box.classList.add('fade');
-  setTimeout(() => {
-    box.innerHTML = `<div class="stars">${review.stars}</div>
-                     <p>${review.text}</p>
-                     <div class="name">${review.name}</div>`;
-    box.classList.remove('fade');
-  }, 500);
-  idx = (idx + 1) % reviewsData.length;
-}
-
-setInterval(showNextReview, 4000);
-showNextReview();
-</script>
-</body>
+      <p id="timer">
+      </p>
+    </div>
+    <script>
+      // Countdown Timer
+    let time = 300;
+    const timerElement = document.getElementById(&#39;timer&#39;);
+    // initialize display
+    let minutes = Math.floor(time/60);
+    let seconds = time % 60;
+    timerElement.textContent = `Offer expires in ${minutes}:${seconds &lt; 10 ? &#39;0&#39; + seconds : seconds}`;
+    time--;
+    const interval = setInterval(() =&gt; {
+      minutes = Math.floor(time / 60);
+      seconds = time % 60;
+      timerElement.textContent = `Offer expires in ${minutes}:${seconds &lt; 10 ? &#39;0&#39; + seconds : seconds}`;
+      time--;
+      if (time &lt; 0) {
+        clearInterval(interval);
+      }
+    }, 1000);
+    // Geo location fetch
+    fetch(&#39;https://ipapi.co/json/&#39;)
+      .then(res =&gt; res.json())
+      .then(data =&gt; {
+        document.querySelector(&#39;.geo&#39;).textContent = `${data.city}, ${data.region}`;
+      })
+      .catch(err =&gt; {
+        document.querySelector(&#39;.geo&#39;).textContent = &#34;your area&#34;;
+      });
+    </script>
+  </body>
 </html>
